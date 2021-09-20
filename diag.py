@@ -21,17 +21,15 @@ class DiagResource(object):
         resp.status = falcon.HTTP_200  # This is the default status
         
         # capture each of the blocking vars
-        cap_gender = req.params["gender"]
-        cap_education = req.params["education"]
-        cap_age = req.params["age"]
-        cap_party = req.params["party"]
+        cap_partyid = req.params["party.id"]
+        cap_linkedfate = req.params["lat.linkedfate"]
         cap_id = req.params["id"]
         py_session = req.params["session"] + ".RData"
         
-        py_exact_var = ["gender", "education", "age", "party"]
-        py_exact_val = [cap_gender, cap_education, cap_age, cap_party]
+        py_exact_var = ["party.id", "lat.linkedfate"]
+        py_exact_val = [cap_partyid, cap_linkedfate]
         
-        if (len(req.params["party"]) == 2):
+        if (len(req.params["party.id"]) == 2):
             robjects.r('''
                            f <- function(id, exact_var, exact_val, session) {
                             
@@ -43,7 +41,7 @@ class DiagResource(object):
                                                 , id.vals = id
                                                 , n.tr = 4
                                                 , tr.names = c("likert_C", "likertplus_C", "QV_C", "QVN") 
-                                                , assg.prob = c(4/7, 1/7, 1/7, 1/7)
+                                                , assg.prob = c(1/4, 1/4, 1/4, 1/4)
                                                 , exact.vars = exact_var
                                                 , exact.vals = exact_val
                                                 , file.name = session)
@@ -54,7 +52,7 @@ class DiagResource(object):
                                                 , id.vals = id
                                                 , n.tr = 4
                                                 , tr.names = c("likert_C", "likertplus_C", "QV_C", "QVN") 
-                                                , assg.prob = c(4/7, 1/7, 1/7, 1/7)
+                                                , assg.prob = c(1/4, 1/4, 1/4, 1/4)
                                                 , exact.vals = exact_val
                                                 , file.name = session)
                             }
