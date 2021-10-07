@@ -39,9 +39,29 @@ class DiagResource(object):
                                 seqout <- seqblock(query = FALSE
                                                 , id.vars = "ID"
                                                 , id.vals = id
-                                                , n.tr = 4
-                                                , tr.names = c("likert_C", "likertplus_C", "QV_C", "QVN") 
-                                                , assg.prob = c(1/4, 1/4, 1/4, 1/4)
+                                                , n.tr = 10
+                                                , tr.names = c(
+                                                 "edp",
+                                                 "edm",
+                                                 "erp",
+                                                 "erm",
+                                                 "idp",
+                                                 "idp+ec",
+                                                 "idm",
+                                                 "irp",
+                                                 "irp+ec",
+                                                 "irm")
+                                                , assg.prob = c(
+                                                .0625,
+                                                .1875,
+                                                .0625,
+                                                .1875,
+                                                .025,
+                                                .15,
+                                                .075,
+                                                .025,
+                                                .15,
+                                                .075)
                                                 , exact.vars = exact_var
                                                 , exact.vals = exact_val
                                                 , file.name = session)
@@ -50,9 +70,29 @@ class DiagResource(object):
                                 seqout <- seqblock(query = FALSE
                                                 , object = session
                                                 , id.vals = id
-                                                , n.tr = 4
-                                                , tr.names = c("likert_C", "likertplus_C", "QV_C", "QVN") 
-                                                , assg.prob = c(1/4, 1/4, 1/4, 1/4)
+                                                , n.tr = 10
+                                                , tr.names = c(
+                                                 "edp",
+                                                 "edm",
+                                                 "erp",
+                                                 "erm",
+                                                 "idp",
+                                                 "idp+ec",
+                                                 "idm",
+                                                 "irp",
+                                                 "irp+ec",
+                                                 "irm")
+                                                , assg.prob = c(
+                                                .0625,
+                                                .1875,
+                                                .0625,
+                                                .1875,
+                                                .025,
+                                                .15,
+                                                .075,
+                                                .025,
+                                                .15,
+                                                .075)
                                                 , exact.vals = exact_val
                                                 , file.name = session)
                             }
