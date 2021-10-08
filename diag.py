@@ -64,10 +64,6 @@ class DiagResource(object):
                                                 , id.vals = id
                                                 , n.tr = 10
                                                 , tr.names = c(
-                                                 "edp",
-                                                 "edm",
-                                                 "erp",
-                                                 "erm",
                                                  "idp",
                                                  "idp+ec",
                                                  "idm",
@@ -75,16 +71,12 @@ class DiagResource(object):
                                                  "irp+ec",
                                                  "irm")
                                                 , assg.prob = c(
-                                                .0625,
-                                                .1875,
-                                                .0625,
-                                                .1875,
-                                                .025,
                                                 .15,
-                                                .075,
-                                                .025,
                                                 .15,
-                                                .075)
+                                                .2,
+                                                .15,
+                                                .15,
+                                                .2)
                                                 , exact.vals = exact_val
                                                 , file.name = session)
                             }
